@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CoDevX — Software Tech</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+/* HOME-SPECIFIC */
+.hero{min-height:calc(100vh - 70px);padding-top:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-inline:5%;position:relative;overflow:hidden}
+.hero-glow-l{top:20%;left:-10%;background:radial-gradient(circle,rgba(37,99,235,.13) 0%,transparent 65%)}
+.hero-glow-r{top:10%;right:-10%;background:radial-gradient(circle,rgba(124,58,237,.13) 0%,transparent 65%)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(124,58,237,.12));border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:11px;font-weight:600;color:var(--gray);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2.75rem;margin-top:2.75rem}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--grad);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero h1{font-size:clamp(44px,7.5vw,92px);font-weight:800;line-height:1.02;letter-spacing:-2.5px;margin-bottom:1.5rem;max-width:860px}
+.hero p{font-size:clamp(15px,2vw,18px);color:var(--gray);max-width:520px;line-height:1.75;margin-bottom:2.75rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.hero-stats{display:flex;gap:3rem;margin-top:5rem;flex-wrap:wrap;justify-content:center;padding-bottom:3rem}
+.stat-num{font-size:38px;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.stat-label{font-size:12px;color:var(--gray);margin-top:5px;letter-spacing:.5px}
+
+/* MARQUEE */
+.marquee-wrap{padding:2.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;position:relative}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;width:140px;height:100%;z-index:2}
+.marquee-wrap::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.marquee-track{display:flex;gap:3rem;animation:scroll 22s linear infinite;width:max-content}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.m-item{font-size:13px;font-weight:600;color:var(--gray2);letter-spacing:1px;white-space:nowrap;display:flex;align-items:center;gap:10px}
+.m-dot{width:5px;height:5px;border-radius:50%;background:var(--grad);opacity:.7;flex-shrink:0}
+
+/* SERVICES TEASER */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
+.services-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem}
+
+@media(max-width:768px){
+  .hero h1{letter-spacing:-1.5px}
+  .hero-stats{gap:1.75rem}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="grid-bg"></div>
+    <div class="glow-blue glow-purple hero-glow-l" style="width:600px;height:600px"></div>
+    <div class="glow-purple hero-glow-r" style="width:600px;height:600px"></div>
+
+    <div class="eyebrow"><span class="eyebrow-dot"></span>Software Tech · Est. 2026</div>
+    <h1>We build software<br>that <span class="accent">actually ships.</span></h1>
+    <p>CoDevX is a lean, focused software tech. We design, develop, and deliver digital products — web, mobile, and custom systems — for startups and growing businesses.</p>
+    <div class="hero-btns">
+      <a href="work.html" class="btn-primary">See Our Work</a>
+      <a href="contact.html" class="btn-ghost">Start a Project</a>
+    </div>
+    <br>
+    <br>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="m-item">React<span class="m-dot"></span></span>
+      <span class="m-item">Next.js<span class="m-dot"></span></span>
+      <span class="m-item">Node.js<span class="m-dot"></span></span>
+      <span class="m-item">Flutter<span class="m-dot"></span></span>
+      <span class="m-item">Laravel<span class="m-dot"></span></span>
+      <span class="m-item">PostgreSQL<span class="m-dot"></span></span>
+      <span class="m-item">AWS<span class="m-dot"></span></span>
+      <span class="m-item">TypeScript<span class="m-dot"></span></span>
+      <span class="m-item">Docker<span class="m-dot"></span></span>
+      <span class="m-item">Figma<span class="m-dot"></span></span>
+      <span class="m-item">React<span class="m-dot"></span></span>
+      <span class="m-item">Next.js<span class="m-dot"></span></span>
+      <span class="m-item">Node.js<span class="m-dot"></span></span>
+      <span class="m-item">Flutter<span class="m-dot"></span></span>
+      <span class="m-item">Laravel<span class="m-dot"></span></span>
+      <span class="m-item">PostgreSQL<span class="m-dot"></span></span>
+      <span class="m-item">AWS<span class="m-dot"></span></span>
+      <span class="m-item">TypeScript<span class="m-dot"></span></span>
+      <span class="m-item">Docker<span class="m-dot"></span></span>
+      <span class="m-item">Figma<span class="m-dot"></span></span>
+    </div>
+  </div>
+
+  <!-- SERVICES TEASER -->
+  <section>
+    <div class="services-header">
+      <div>
+        <div class="section-label" style="font-size: larger;">What We Do</div>
+        <h2 class="section-title">Services built for<br><span class="accent">real products.</span></h2>
+      </div>
+      <a href="services.html" class="btn-ghost" style="white-space:nowrap;padding:10px 22px;font-size:13px">All Services →</a>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card fade-in"><div class="svc-icon">🌐</div><h3>Web Development</h3><p>Full-stack web apps built with modern frameworks. Fast, scalable, and maintainable from day one.</p></div>
+      <div class="svc-card fade-in"><div class="svc-icon">📱</div><h3>Mobile Apps</h3><p>Native and cross-platform apps for iOS and Android. Smooth UX, reliable performance.</p></div>
+      <div class="svc-card fade-in"><div class="svc-icon">🎨</div><h3>UI/UX Design</h3><p>Interfaces that feel obvious to use. We design systems, not just screens.</p></div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band fade-in">
+    <h2>Got a project in mind?</h2>
+    <p>Tell us what you're building and we'll find the fastest path to launch.</p>
+    <a href="contact.html" class="btn-primary">Let's Talk →</a>
+  </div>
+</main>
+
+<script src="shared.js"></script>
+</body>
+</html>
