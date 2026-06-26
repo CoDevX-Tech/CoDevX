@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Services — CoDevX</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.services-full{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-top:3rem}
+.process-step{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:2rem;position:relative;transition:.3s}
+.process-step:hover{border-color:rgba(124,58,237,.35);transform:translateY(-3px)}
+.step-num{font-size:52px;font-weight:800;background:linear-gradient(135deg,rgba(37,99,235,.18),rgba(124,58,237,.18));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.75rem}
+.process-step h3{font-size:16px;font-weight:700;margin-bottom:.5rem}
+.process-step p{font-size:13px;color:var(--gray);line-height:1.65}
+.connector{display:none}
+@media(min-width:900px){
+  .process-steps{position:relative}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <!-- HEADER -->
+  <section style="padding-top:8rem;padding-bottom:3rem">
+    <div class="section-label" style="font-size: larger;">Services</div>
+    <h2 class="section-title">What CoDevX<br><span class="accent">builds for you.</span></h2>
+    <p class="section-sub">A tight set of services we're genuinely great at — no padding, no upsells.</p>
+    <div class="services-full">
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>We build modern websites and web applications that are fast, responsive, and designed to support your business growth.<br>
+
+          <ul>We build:
+            <li style="font-size:small;">Business websites</li>
+            <li style="font-size:small;">Web applications</li>
+            <li style="font-size:small;">Dashboards</li>
+            <li style="font-size:small;">Custom platforms</li>
+          </ul>
+        </p>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">📱</div>
+        <h3>Mobile Apps</h3>
+        <p>Cross-platform mobile applications built with Flutter to deliver smooth experiences on Android and iOS.
+           <ul>We build:
+            <li style="font-size:small;">Business mobile apps</li>
+            <li style="font-size:small;">Management apps</li>
+            <li style="font-size:small;">User-focused applications</li>
+          </ul> 
+        </p>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🔌</div>
+        <h3> Backend & APIs</h3>
+        <p>Reliable backend systems that power your applications with secure data handling and scalable architecture.
+          <ul>We build:
+            <li style="font-size:small;">Authentication systems</li>
+            <li style="font-size:small;">Database solutions</li>
+            <li style="font-size:small;">Backend services</li>
+          </ul> 
+        </p>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🎨</div>
+        <h3>UI/UX Design</h3>
+        <p>We transform designs into clean, functional interfaces with focus on usability and user experience.
+          <ul>We work with:
+            <li style="font-size:small;">Figma </li>
+            <li style="font-size:small;">Responsive Design</li>
+            <li style="font-size:small;">Design Systems</li>
+          </ul> 
+        </p>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">⚙️</div>
+        <h3>Custom Software</h3>
+        <p>ERP, CRM, internal tools, and workflow automation. We map your process first, then build exactly the system you need.</p>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">📊</div>
+        <h3>Data Programming</h3>
+        <p>We build powerful data processing solutions to handle, analyze, and transform data efficiently for real-world business needs.
+          <ul>We work with:
+            <li style="font-size:small;">Python (Pandas, NumPy, SciPy) </li>
+            <li style="font-size:small;">SQL (MySQL, PostgreSQL, SQLite)</li>
+            <li style="font-size:small;">R Programming</li>
+          </ul> 
+        </p>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">📈</div>
+        <h3>Data Visualization & BI</h3>
+        <p>We transform raw data into clear, interactive dashboards that help businesses make smarter decisions.
+          <ul>We build:
+            <li style="font-size:small;">Tableau Dashboards</li>
+            <li style="font-size:small;">Looker Studio Reports</li>
+            <li style="font-size:small;">Streamlit Apps</li>
+            <li style="font-size:small;">Advanced Excel & Google Sheets</li>
+          </ul> 
+        </p>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🤖</div>
+        <h3>Machine Learning & Analytics</h3>
+        <p>We develop intelligent models that extract insights, predict trends, and automate decision-making processes.
+          <ul>We develop:
+            <li style="font-size:small;">Time Series Forecasting (ARIMA, Prophet)</li>
+            <li style="font-size:small;">Classification & Regression Models</li>
+            <li style="font-size:small;">Natural Language Processing (NLP)</li>
+            <li style="font-size:small;">A/B Testing & Bayesian Analysis</li>
+          </ul> 
+        </p>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🩺</div>
+        <h3>Healthcare & Biostatistics</h3>
+        <p>We provide data-driven insights for healthcare systems, supporting research, risk analysis, and public health decisions.
+          <ul>We analyze:
+            <li style="font-size:small;">Clinical Research Methods</li>
+            <li style="font-size:small;">Epidemiology Analysis</li>
+            <li style="font-size:small;">Risk & Demographic Analysis</li>
+            <li style="font-size:small;">Public Health Indicators</li>
+          </ul> 
+        </p>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🎓</div>
+        <h3>Data Training & Mentorship</h3>
+        <p>We help individuals and teams grow their data skills through structured learning and hands-on training.
+          <ul>We provide:
+            <li style="font-size:small;">Technical Curriculum Design</li>
+            <li style="font-size:small;">Live Training Sessions</li>
+            <li style="font-size:small;">1-on-1 Mentorship</li>
+            <li style="font-size:small;">Problem Solving & Guidance</li>
+          </ul> 
+        </p>
+      </div>
+    </div>
+  </section>
+  <!--Technologies We Use-->
+  <section style="padding-top:8rem;padding-bottom:3rem">
+    <div class="section-label" style="font-size: larger;">Technologies We Use</div>
+    <h2 class="section-title">What CoDevX<br><span class="accent">technologies used.</span></h2>
+    <p class="section-sub">We choose the right tools for every project to build reliable, scalable, and maintainable products.</p>
+    <div class="services-full">
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🌐</div>
+        <h3>Web Frontend</h3>
+          <ul>
+            <li style="font-size:medium;">HTML5</li>
+            <li style="font-size:medium;">CSS3</li>
+            <li style="font-size:medium;">JavaScript</li>
+            <li style="font-size:medium;">Bootstrap</li>
+            <li style="font-size:medium;">React.js</li>
+            <li style="font-size:medium;">Next.js</li>
+          </ul>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🌐</div>
+        <h3>Web Backend</h3>
+          <ul>
+            <li style="font-size:medium;">Node.js</li>
+            <li style="font-size:medium;">Express.js</li>
+            <li style="font-size:medium;">PHP</li>
+            <li style="font-size:medium;">Laravel</li>
+          </ul>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">💾</div>
+        <h3>Database</h3>
+          <ul>
+            <li style="font-size:medium;">MySQL</li>
+            <li style="font-size:medium;">MongoDB</li>
+            <li style="font-size:medium;">PostgreSQL</li>
+          </ul>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">📱</div>
+        <h3>Mobile Apps</h3>
+         <ul>
+            <li style="font-size:medium;">Flutter</li>
+            <li style="font-size:medium;">Dart</li>
+            <li style="font-size:medium;">Firebase</li>
+          </ul>
+          </ul>
+      </div>   
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🔌</div>
+        <h3> Backend & APIs</h3>
+          <ul>
+            <li style="font-size:medium;">REST APIs</li>
+            <li style="font-size:medium;">Authentication Systems</li>
+            <li style="font-size:medium;">Node.js</li>
+            <li style="font-size:medium;">Express.js</li>
+            <li style="font-size:medium;">Laravel</li>
+            <li style="font-size:medium;">Database Integration</li>
+          </ul>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🎨</div>
+        <h3>Design & Development Tools</h3>
+          <ul>
+            <li style="font-size:medium;">Figma</li>
+            <li style="font-size:medium;">Git</li>
+            <li style="font-size:medium;">GitHub</li>
+            <li style="font-size:medium;">Postman</li>
+          </ul>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">☁️</div>
+        <h3>Deployment & Hosting</h3>
+          <ul>
+            <li style="font-size:medium;">Cloud Platforms</li>
+            <li style="font-size:medium;">Hosting Solutions</li>
+            <li style="font-size:medium;">Version Control</li>
+          </ul>      
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">🛠</div>
+        <h3>Testing & Quality Assurance</h3>
+          <ul>
+            <li style="font-size:medium;">Manual Testing</li>
+            <li style="font-size:medium;">Bug Tracking</li>
+            <li style="font-size:medium;">Performance Testing</li>
+            <li style="font-size:medium;">Usability Testing</li>
+          </ul>      
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">📊</div>
+        <h3>Data Analysis & Reporting</h3>
+          <ul>
+            <li style="font-size:medium;">Python</li>
+            <li style="font-size:medium;">Pandas</li>
+            <li style="font-size:medium;">NumPy</li>
+            <li style="font-size:medium;">Matplotlib</li>
+            <li style="font-size:medium;">Power BI</li>
+            <li style="font-size:medium;">Excel</li>
+          </ul>
+      </div>
+      <div class="svc-card fade-in">
+        <div class="svc-icon">📋</div>
+        <h3>Project Management</h3>
+          <ul>
+            <li style="font-size:medium;">Jira</li>
+            <li style="font-size:medium;">Trello</li>
+            <li style="font-size:medium;">Notion </li>
+          </ul>      
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="section-label"style="font-size: larger;">How We Work</div>
+    <h2 class="section-title">From idea to<br><span class="accent">live product.</span></h2>
+    <div class="process-steps">
+      <div class="process-step fade-in"><div class="step-num">01</div><h3>Discovery</h3><p>We understand your goals, users, and constraints before writing a single line of code.</p></div>
+      <div class="process-step fade-in"><div class="step-num">02</div><h3>Design</h3><p>Wireframes and prototypes validated early — so we build the right thing from the start.</p></div>
+      <div class="process-step fade-in"><div class="step-num">03</div><h3>Build</h3><p>Agile sprints with weekly demos. You see working software early and often.</p></div>
+      <div class="process-step fade-in"><div class="step-num">04</div><h3>Launch</h3><p>Deployment, testing, monitoring. We stay on through go-live and the first week after.</p></div>
+      <div class="process-step fade-in"><div class="step-num">05</div><h3>Support</h3><p>Post-launch retainers, bug fixes, and features — we don't disappear after delivery.</p></div>
+    </div>
+  </section>
+
+  <div class="cta-band fade-in">
+    <h2>Not sure what you need?</h2>
+    <p>Book a free 30-minute call. We'll figure out the right scope and stack for your project.</p>
+    <a href="contact.html" class="btn-primary">Book a Free Call →</a>
+  </div>
+</main>
+
+<script src="shared.js"></script>
+</body>
+</html>

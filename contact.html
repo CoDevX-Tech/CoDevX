@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Contact — CoDevX</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<style>
+.contact-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start;padding-top:8rem}
+.contact-info h1{font-size:clamp(32px,5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:1.25rem}
+.contact-info p{color:var(--gray);font-size:15px;line-height:1.75;margin-bottom:2.25rem}
+.c-item{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;padding:1rem 1.25rem;background:var(--card);border:1px solid var(--border);border-radius:10px;transition:.2s}
+.c-item:hover{border-color:rgba(124,58,237,.3)}
+.c-icon{width:42px;height:42px;background:linear-gradient(135deg,rgba(37,99,235,.15),rgba(124,58,237,.15));border:1px solid var(--border);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.c-item span{font-size:12px;color:var(--gray2);display:block;margin-bottom:2px;letter-spacing:.3px}
+.c-item strong{font-size:14px;font-weight:600;color:var(--white)}
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2.5rem}
+.form-card h3{font-size:20px;font-weight:700;margin-bottom:1.75rem}
+
+/* ── VALIDATION STYLES ── */
+.form-group{position:relative}
+.form-group input,
+.form-group textarea,
+.form-group select{width:100%;transition:.2s}
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error{
+  border-color:#ef4444!important;
+  box-shadow:0 0 0 3px rgba(239,68,68,.12)!important;
+}
+.form-group input.valid,
+.form-group textarea.valid,
+.form-group select.valid{
+  border-color:#22c55e!important;
+  box-shadow:0 0 0 3px rgba(34,197,94,.1)!important;
+}
+.err-msg{
+  font-size:11px;
+  color:#ef4444;
+  margin-top:4px;
+  display:none;
+  font-weight:500;
+}
+.err-msg.show{display:block}
+.field-icon{
+  position:absolute;
+  right:14px;
+  top:38px;
+  font-size:14px;
+  pointer-events:none;
+  opacity:0;
+  transition:.2s;
+}
+.field-icon.show{opacity:1}
+
+/* ── SUBMIT BUTTON ── */
+.submit-btn{
+  width:100%;
+  background:var(--grad);
+  color:#fff;
+  padding:14px;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:700;
+  transition:.2s;
+  cursor:pointer;
+  border:none;
+  font-family:'Poppins',sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+.submit-btn:hover:not(:disabled){opacity:.88;transform:translateY(-1px)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.spinner{
+  width:16px;height:16px;
+  border:2px solid rgba(255,255,255,.3);
+  border-top-color:#fff;
+  border-radius:50%;
+  animation:spin .7s linear infinite;
+  display:none;
+}
+.spinner.show{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── SUCCESS STATE ── */
+.success-banner{
+  display:none;
+  background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(37,99,235,.1));
+  border:1px solid rgba(34,197,94,.3);
+  border-radius:10px;
+  padding:1.25rem 1.5rem;
+  text-align:center;
+  margin-bottom:1.5rem;
+  font-size:14px;
+  color:#22c55e;
+  font-weight:600;
+}
+.success-banner.show{display:block}
+
+@media(max-width:768px){
+  .contact-wrap{grid-template-columns:1fr;padding-top:6rem}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <section>
+    <div class="contact-wrap">
+
+      <!-- INFO -->
+      <div class="contact-info fade-in">
+        <div class="section-label">Contact Us</div>
+        <h1>Let's build something<br><span class="accent">together.</span></h1>
+        <p>We're open to new projects, partnerships, and conversations. Drop us a line and we'll get back to you within 24 hours.</p>
+        <div class="c-item">
+          <div class="c-icon">📧</div>
+          <div><span>Email</span><strong>codevx.official@gmail.com</strong></div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">📞</div>
+          <div><span>WhatsApp / Phone</span><strong>+20 105 568 2350</strong></div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">📍</div>
+          <div><span>Location</span><strong>Ismailia, Egypt · Remote-first</strong></div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon">⏱</div>
+          <div><span>Response Time</span><strong>Within 24 hours</strong></div>
+        </div>
+        <div class="social-links" style="margin-top: 20px;">
+          <span style="display:block; margin-bottom:8px; font-weight:600; font-size:30px;">Follow Us</span>
+          <a href="https://www.facebook.com/profile.php?id=61591560532508" target="_blank" style="font-size: 35px; margin-right: 10px;">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/codevx/" target="_blank" style="font-size: 35px; margin-right: 10px;">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/codevx_tech/" target="_blank" style="font-size: 35px; margin-right: 10px;">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/201055682350" target="_blank" style="font-size: 35px; margin-right: 10px;">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="form-card fade-in">
+        <h3>Tell us about your project</h3>
+
+        <div class="success-banner" id="successBanner">
+          ✅ Message sent! We'll get back to you within 24 hours.
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" id="firstName" placeholder="Youssef" oninput="validateField(this)"/>
+            <span class="field-icon" id="icon-firstName"></span>
+            <p class="err-msg" id="err-firstName">First name is required</p>
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" id="lastName" placeholder="Mahmoud" oninput="validateField(this)"/>
+            <span class="field-icon" id="icon-lastName"></span>
+            <p class="err-msg" id="err-lastName">Last name is required</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" id="email" placeholder="you@gmail.com" oninput="validateField(this)"/>
+          <span class="field-icon" id="icon-email"></span>
+          <p class="err-msg" id="err-email">Please enter a valid email address</p>
+        </div>
+
+        <div class="form-group">
+          <label>Service Needed *</label>
+          <select id="service" onchange="validateField(this)">
+            <option value="">Select a service...</option>
+            <option>Web Development</option>
+            <option>Mobile App</option>
+            <option>UI/UX Design</option>
+            <option>Custom Software</option>
+            <option>Something Else</option>
+          </select>
+          <span class="field-icon" id="icon-service"></span>
+          <p class="err-msg" id="err-service">Please select a service</p>
+        </div>
+
+        <div class="form-group">
+          <label>Budget Range</label>
+          <select id="budget">
+            <option value="">Select a range... (optional)</option>
+            <option>Under $5,000</option>
+            <option>$5,000 – $15,000</option>
+            <option>$15,000 – $50,000</option>
+            <option>$50,000+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Project Brief *</label>
+          <textarea id="message" placeholder="What are you building? What problem does it solve? What's your timeline?" oninput="validateField(this)"></textarea>
+          <span class="field-icon" id="icon-message"></span>
+          <p class="err-msg" id="err-message">Please tell us about your project (min 20 characters)</p>
+        </div>
+
+        <button class="submit-btn" id="submitBtn" onclick="submitForm()">
+          <span id="btnText">Send Message →</span>
+          <div class="spinner" id="spinner"></div>
+        </button>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<script src="shared.js"></script>
+<script>
+const EMAILJS_PUBLIC_KEY  = 'vYwFZbKhx6jT9Kl1D';   // Account → API Keys
+const EMAILJS_SERVICE_ID  = 'service_pxqj11f';   // Email Services tab
+const EMAILJS_TEMPLATE_ID = 'template_qdvu4j8';  // Email Templates tab
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+/* ── VALIDATION RULES ── */
+const rules = {
+  firstName : v => v.trim().length >= 2,
+  lastName  : v => v.trim().length >= 2,
+  email     : v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+  service   : v => v !== '',
+  message   : v => v.trim().length >= 20,
+};
+
+function validateField(el){
+  const id  = el.id;
+  const val = el.value;
+  if(!rules[id]) return true; // optional fields (budget)
+
+  const ok     = rules[id](val);
+  const errEl  = document.getElementById('err-' + id);
+  const iconEl = document.getElementById('icon-' + id);
+
+  el.classList.toggle('error', !ok);
+  el.classList.toggle('valid',  ok);
+  if(errEl)  errEl.classList.toggle('show', !ok);
+  if(iconEl){ iconEl.textContent = ok ? '✅' : '❌'; iconEl.classList.add('show'); }
+
+  return ok;
+}
+
+function validateAll(){
+  const fields = ['firstName','lastName','email','service','message'];
+  return fields.map(id => {
+    const el = document.getElementById(id);
+    return validateField(el);
+  }).every(Boolean);
+}
+
+/* ── SUBMIT ── */
+async function submitForm(){
+  if(!validateAll()) return;
+
+  const btn     = document.getElementById('submitBtn');
+  const spinner = document.getElementById('spinner');
+  const btnText = document.getElementById('btnText');
+
+  // Loading state
+  btn.disabled       = true;
+  spinner.classList.add('show');
+  btnText.textContent = 'Sending...';
+
+  const params = {
+    from_name   : document.getElementById('firstName').value.trim()
+                  + ' ' + document.getElementById('lastName').value.trim(),
+    from_email  : document.getElementById('email').value.trim(),
+    service     : document.getElementById('service').value,
+    budget      : document.getElementById('budget').value || 'Not specified',
+    message     : document.getElementById('message').value.trim(),
+    to_email    : 'codevx.official@gmail.com',
+  };
+
+  try {
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+
+    // Success
+    document.getElementById('successBanner').classList.add('show');
+    btnText.textContent = '✅ Sent!';
+    spinner.classList.remove('show');
+
+    // Reset form fields
+    ['firstName','lastName','email','service','budget','message'].forEach(id => {
+      const el = document.getElementById(id);
+      el.value = '';
+      el.classList.remove('valid','error');
+    });
+    ['firstName','lastName','email','service','message'].forEach(id => {
+      const icon = document.getElementById('icon-'+id);
+      const err  = document.getElementById('err-'+id);
+      if(icon){ icon.textContent=''; icon.classList.remove('show'); }
+      if(err)   err.classList.remove('show');
+    });
+
+    setTimeout(()=>{
+      document.getElementById('successBanner').classList.remove('show');
+      btn.disabled = false;
+      btnText.textContent = 'Send Message →';
+    }, 5000);
+
+  } catch(err) {
+    console.error('EmailJS error:', err);
+    btnText.textContent = 'Failed — Try Again';
+    spinner.classList.remove('show');
+    btn.disabled = false;
+    showToast('❌ Something went wrong. Please email us directly.');
+  }
+}
+</script>
+</body>
+</html>
+
+
+

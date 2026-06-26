@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Projects — CoDevX</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.5rem;margin-top:3rem}
+.work-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:.3s}
+.work-card:hover{border-color:rgba(124,58,237,.4);transform:translateY(-6px)}
+.work-thumb {height: 196px;overflow: hidden;position: relative;}
+.work-thumb img {width: 100%;height: 100%;object-fit: cover;display: block;transition: 0.4s;}
+.work-card:hover .work-thumb img {transform: scale(1.05);}
+.work-thumb::after {content: "";position: absolute;inset: 0;background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));}
+.work-body{padding:1.5rem}
+.work-tag{display:inline-block;font-size:10px;font-weight:700;background:linear-gradient(135deg,rgba(37,99,235,.12),rgba(124,58,237,.12));border:1px solid var(--border);border-radius:4px;padding:3px 10px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:.85rem;color:var(--gray)}
+.work-card h3{font-size:17px;font-weight:700;margin-bottom:.4rem}
+.work-card p{font-size:13.5px;color:var(--gray);line-height:1.65}
+.tech-tags{display:flex;gap:.4rem;margin-top:1rem;flex-wrap:wrap}
+.work-empty{border-style:dashed;display:flex;align-items:center;justify-content:center;min-height:340px}
+.work-empty-inner{text-align:center;padding:2rem}
+.work-empty-icon{font-size:44px;margin-bottom:1rem;display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+</style>
+</head>
+<body>
+
+<main>
+  <section style="padding-top:8rem">
+    <div class="section-label" style="font-size: larger;">Our Projects</div>
+    <h2 class="section-title">Products we've<br><span class="accent">shipped.</span></h2>
+    <p class="section-sub">A selection of client projects across web, mobile, and custom software. Real problems, real solutions.</p>
+
+    <div class="work-grid">
+
+      <!-- 1 -->
+      <div class="work-card fade-in">
+        <div class="work-thumb">
+          <img src="21.jpg" alt="Legal Notebook System">
+        </div>
+        <div class="work-body">
+          <span class="work-tag">Legal Tech</span>
+          <h3>Digital Legal Notebook</h3>
+          <p>A modern note-taking system tailored for lawyers to manage cases, organize documents, and streamline their daily workflow with ease.</p>
+          <div class="tech-tags">
+            <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="work-card fade-in">
+        <div class="work-thumb">
+          <img src="22.jpg" alt="Weather App UI">
+        </div>
+        <div class="work-body">
+          <span class="work-tag">Mobile App</span>
+          <h3>Weather Today App</h3>
+          <p>A clean and intuitive weather app that provides real-time forecasts for major cities worldwide, with a focus on simplicity and user-friendly design.</p>
+          <div class="tech-tags">
+            <span class="tag">Flutter</span><span class="tag">Dart </span><span class="tag">REST API</span><span class="tag">HTTP Package</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="work-card fade-in">
+        <div class="work-thumb">
+          <img src="23.jpg" alt="Travel Booking Platform">
+        </div>
+        <div class="work-body">
+          <span class="work-tag">Frontend · Travel</span>
+          <h3>SkyBook Website</h3>
+          <p>A complete travel booking website for exploring destinations, booking flights and stays, and managing user accounts with a smooth and responsive user experience.</p>
+          <div class="tech-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="work-card fade-in">
+        <div class="work-thumb">
+          <img src="24.jpg" alt="Online Learning Platform">
+        </div>
+        <div class="work-body">
+          <span class="work-tag">EdTech · Web App</span>
+          <h3>LearnHub Platform</h3>
+          <p>An online learning platform for high school students featuring video lessons, quizzes for each topic, and a secure authentication system for login and user management.</p>
+          <div class="tech-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Flask</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="work-card fade-in">
+        <div class="work-thumb">
+          <img src="25.jpg" alt="Cashier">
+        </div>
+        <div class="work-body">
+          <span class="work-tag">Business · Finance</span>
+          <h3>Cashier Management System</h3>
+          <p>A web-based cashier and financial management system for tracking sales, expenses, and account balances. Features transaction management, real-time dashboard analytics, financial reports, and secure user authentication.</p>
+          <div class="tech-tags">
+            <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 — empty slot -->
+      <div class="work-card work-empty fade-in">
+        <div class="work-empty-inner">
+          <span class="work-empty-icon">✦</span>
+          <h3 style="margin-bottom:.5rem">Your Project Here</h3>
+          <p style="font-size:13.5px;color:var(--gray);line-height:1.65;margin-bottom:1.5rem">We're accepting new projects. Spots are limited.</p>
+          <a href="contact.html" class="btn-primary" style="font-size:13px;padding:10px 22px">Start a Conversation</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<script src="shared.js"></script>
+</body>
+</html>
